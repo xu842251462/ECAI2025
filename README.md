@@ -35,7 +35,7 @@ This repository accompanies our **ECAI 2025 paper**:
 
 ### Setup
 ```bash
-git clone https://github.com/your-username/merinda-ecai2025.git
-cd merinda-ecai2025
+git clone https://github.com/xu842251462/ECAI2025.git
+cd ECAI2025
 pip install -r requirements.txt
 
