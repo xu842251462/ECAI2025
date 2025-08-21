@@ -39,3 +39,10 @@ git clone https://github.com/xu842251462/ECAI2025.git
 cd ECAI2025
 pip install -r requirements.txt
 
+## 🚀 Usage
+
+### 1. Train the MR model
+```bash
+python train.py --config configs/mr_config.yaml
+
+
