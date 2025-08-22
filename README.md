@@ -97,6 +97,5 @@ python3 traffic.py --model ltc --epochs 300 --size 64 --log 5
 ```
 ## Results
 <img width="833" height="255" alt="image" src="https://github.com/user-attachments/assets/2b42882d-59b4-4dcc-aafc-6b9d9a20abc9" />
-
-
+<img width="565" height="688" alt="memory_enenrgy_tradeoff_comparision_vertical" src="https://github.com/user-attachments/assets/578d7c74-db3a-4633-abe5-f6d673a3c88b" />
 
