@@ -31,7 +31,7 @@ This repository accompanies our **ECAI 2025 paper**:
 
 ### Prerequisites
 - Python 3.9+  
-- [Tensorflow] = 2.21  
+- Tensorflow = 2.21  
 - [Xilinx Vitis HLS / Vitis Unified Software Platform](https://www.xilinx.com/products/design-tools/vitis.html)  
 - FPGA board (tested on **PYNQ-Z2**)
 
