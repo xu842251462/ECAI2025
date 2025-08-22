@@ -98,11 +98,32 @@ python3 traffic.py --model ltc --epochs 300 --size 64 --log 5
 ## Results
 <img width="406" height="143" alt="image" src="https://github.com/user-attachments/assets/bceec543-8b04-45a8-8613-dc99151e359f" />
 
-From Table 4 we see that for all four benchmark applications, MERINDA architecture is successful in recovering the underlying dynamics with comparable accuracy as SOTA methods which use the standard Tensorflow pipeline for neural network training in GPU based systems.
+## 📈 Analysis of Table 4
+
+From **Table 4**, we observe that across all four benchmark applications, the **MERINDA architecture** successfully recovers the underlying dynamics with **comparable accuracy** to state-of-the-art (SOTA) methods.  
+
+Unlike SOTA baselines that rely on the standard **TensorFlow pipeline** for neural network training on **GPU-based systems**, MERINDA achieves this performance while maintaining its specialized architecture advantages.
+
 
 <img width="833" height="255" alt="image" src="https://github.com/user-attachments/assets/2b42882d-59b4-4dcc-aafc-6b9d9a20abc9" />
 
-In depth analysis of Table 3 shows that as the number of state variables of the nonlinear dynamic model reduces, the execution time and energy reduces. While the DRAM footprint mostly depends on the complexity of the nonlinearity rather than the number of state variables. The AID system only has a single non-linear term. Lotka model has two nonlinear terms, while the Lorenz system is a chaotic system. The F8 cruiser has three state variables and multiplicative nonlinearities like Lorenz. The pathogenic system has five variables with several nonlinear terms but is a stable non-chaotic system. We observe a negative correlation between energy and DRAM footprint. 
+## 🔬 In-depth Analysis of Table 3
+
+An in-depth analysis of **Table 3** reveals the following trends:
+
+- As the **number of state variables** in the nonlinear dynamic model decreases, both **execution time** and **energy consumption** are reduced.  
+- The **DRAM footprint**, however, depends more on the **complexity of the nonlinearity** rather than simply the number of state variables.  
+
+### 🧩 System-level Insights
+- **AID system** → only one nonlinear term (simplest).  
+- **Lotka model** → two nonlinear terms.  
+- **Lorenz system** → chaotic system with strong nonlinear dynamics.  
+- **F8 cruiser** → three state variables with multiplicative nonlinearities (similar to Lorenz).  
+- **Pathogenic system** → five state variables with multiple nonlinear terms, but is stable (non-chaotic).  
+
+### 📉 Observed Trend
+We observe a **negative correlation between energy consumption and DRAM footprint** across these models.
+
 
 <img width="565" height="688" alt="memory_enenrgy_tradeoff_comparision_vertical" src="https://github.com/user-attachments/assets/578d7c74-db3a-4633-abe5-f6d673a3c88b" />
 
