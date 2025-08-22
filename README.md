@@ -49,7 +49,7 @@ This repository provides two main components:
 2. **GPU-Ready Models**: Python scripts for training/evaluating time-series models (LSTM, CTRNN, LTC, etc.) across multiple real-world datasets.
 ---
 
-## 📂 Repository Layout
+## 📂 FPGA Model Files
 
 | File / Folder | Description |
 |---------------|-------------|
@@ -97,6 +97,14 @@ python3 traffic.py --model ltc --epochs 300 --size 64 --log 5
 ```
 ## Results
 <img width="406" height="143" alt="image" src="https://github.com/user-attachments/assets/bceec543-8b04-45a8-8613-dc99151e359f" />
+From Table 4 we see that for all four benchmark applications, MERINDA architecture is successful in recovering the underlying dynamics with comparable accuracy as SOTA methods which use the standard Tensorflow pipeline for neural network training in GPU based systems.
+---
 <img width="833" height="255" alt="image" src="https://github.com/user-attachments/assets/2b42882d-59b4-4dcc-aafc-6b9d9a20abc9" />
+In depth analysis of Table 3 shows that as the number of state variables of the nonlinear dynamic model reduces, the execution time and energy reduces. While the DRAM footprint mostly depends on the complexity of the nonlinearity rather than the number of state variables. The AID system only has a single non-linear term. Lotka model has two nonlinear terms, while the Lorenz system is a chaotic system. The F8 cruiser has three state variables and multiplicative nonlinearities like Lorenz. The pathogenic system has five variables with several nonlinear terms but is a stable non-chaotic system. We observe a negative correlation between energy and DRAM footprint. 
+---
 <img width="565" height="688" alt="memory_enenrgy_tradeoff_comparision_vertical" src="https://github.com/user-attachments/assets/578d7c74-db3a-4633-abe5-f6d673a3c88b" />
+As shown in Table 5, the FPGA implementation achieves substantial efficiency gains compared to the GPU baseline. 
+For the MR task, the FPGA offers a 1.67$\times$ speedup in runtime over the GPU (253.97~s vs. 423.21~s), despite operating at significantly lower clock frequencies (173~MHz vs. 1410~MHz).
+Additionally, it achieves a 11$\times$ reduction in DRAM footprint (214.23~MB vs. 2355.13~MB vs. 6118.36~MB for MR). Unlike GPUs that rely heavily on external DRAM (e.g., GDDR6 or HBM), FPGAs can store frequently accessed data (e.g., weights, hidden states, intermediates) in on-chip BRAM or registers. The memory optimization strategy uses HLS directives such as \texttt{\#pragma HLS ARRAY\_PARTITION} to fully partition arrays and enable parallel access from LUT-based registers or block RAMs, thereby reducing the need for frequent external memory accesses. In terms of performance-per-watt, the FPGA achieves an 8.8$\times$ improvement over the cloud GPU. The mobile GPU is more energy-efficient than the FPGA, however, it still requires 10$\times$ more DRAM for MR computations.
+
 
