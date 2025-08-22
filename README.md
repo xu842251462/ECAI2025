@@ -2,7 +2,7 @@
 
 # MERINDA: FPGA-Accelerated Model Recovery for Mission-Critical Autonomous Systems 
 
-# Impact Lab, School of Computing and Augmented Intelligence, Arizona State University, Tempe, AZ, USA(https://github.com/ImpactLabASU)
+## Impact Lab, School of Computing and Augmented Intelligence, Arizona State University, Tempe, AZ, USA (https://github.com/ImpactLabASU)
 
 Model Recovery (MR) enables **safe and explainable decision-making** in mission-critical autonomous systems (MCAS) by learning governing equations of dynamics. However, traditional MR implementations rely on Neural ODEs, whose **iterative solvers are inefficient on edge devices** such as FPGAs. In this setting, **memory footprint and energy consumption** are key bottlenecks for real-time deployment.  
 
