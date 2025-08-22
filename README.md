@@ -43,9 +43,6 @@ cd ECAI2025
 
 # GRU + SINDy FPGA Accelerator
 
-This repository contains FPGA accelerators and software support for GRU-based and SINDy-based models.  
-You can run the provided overlays on a PYNQ board, run CPU-only C++ demos, or rebuild the FPGA projects from scratch with Vivado/Vitis.
-
 ---
 
 ## 📂 Repository Layout
