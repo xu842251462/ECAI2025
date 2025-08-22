@@ -39,7 +39,6 @@ This repository accompanies our **ECAI 2025 paper**:
 ```bash
 git clone https://github.com/xu842251462/ECAI2025.git
 cd ECAI2025
-pip install -r requirements.txt
 ```
 
 # GRU + SINDy FPGA Accelerator
@@ -64,17 +63,6 @@ You can run the provided overlays on a PYNQ board, run CPU-only C++ demos, or re
 
 ---
 
-## 🚀 Getting Started
-
-### 0) Prerequisites
-
-- **Option A: PYNQ Board**
-  - PYNQ image (Z2 / Ultra96, etc.)
-  - `pynq` package preinstalled
-- **Option B: CPU-only runs**
-  - Linux/macOS with `g++` or `clang++` (C++17)
-- **Option C: FPGA rebuild**
-  - Xilinx Vivado / Vitis installed and licensed
 
 
 
