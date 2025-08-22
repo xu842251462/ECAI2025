@@ -41,8 +41,12 @@ git clone https://github.com/xu842251462/ECAI2025.git
 cd ECAI2025
 ```
 
-# GRU + SINDy FPGA Accelerator
+# GRU + SINDy FPGA Accelerator and GPU Time-Series Models
 
+This repository provides two main components:
+
+1. **FPGA Accelerators**: GRU-based and SINDy-based accelerators, deployable on PYNQ boards or rebuildable via Xilinx Vivado/Vitis.  
+2. **GPU-Ready Models**: Python scripts for training/evaluating time-series models (LSTM, CTRNN, LTC, etc.) across multiple real-world datasets.
 ---
 
 ## 📂 Repository Layout
@@ -60,7 +64,39 @@ cd ECAI2025
 
 ---
 
+### GPU / Python Model Files
 
+| File / Folder | Description |
+|---------------|-------------|
+| `ctrnn_model.py` | Continuous-Time RNN (CTRNN) training/evaluation script. |
+| `ltc_model.py` | Liquid Time-Constant (LTC) model training/evaluation script. |
+| `gesture.py` | Gesture recognition dataset pipeline (GPU-enabled). |
+| `har.py` | Human Activity Recognition training/evaluation script. |
+| `occupancy.py` | Room occupancy prediction experiment. |
+| `ozone.py` | Ozone concentration forecasting. |
+| `person.py` | Person/people-count prediction task. |
+| `power.py` | Power consumption/load forecasting. |
+| `traffic.py` | Traffic flow/volume forecasting. |
+| `download_datasets.sh` | Helper script to fetch/preprocess datasets (creates `data/` folder). |
+
+---
+#Example Runs for FPGA
+```bash
+vivado -mode batch -source acceleration_kernel.tcl
+vivado -mode batch -source sindy128.tcl
+```
+
+#Download Datasets
+```bash
+source download_datasets.sh
+```
+
+#Example Runs for GPU
+```bash
+python3 traffic.py --model ltc --epochs 300 --size 64 --log 5
+```
+## Results
+<img width="833" height="255" alt="image" src="https://github.com/user-attachments/assets/2b42882d-59b4-4dcc-aafc-6b9d9a20abc9" />
 
 
 
