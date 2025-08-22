@@ -40,5 +40,42 @@ This repository accompanies our **ECAI 2025 paper**:
 git clone https://github.com/xu842251462/ECAI2025.git
 cd ECAI2025
 pip install -r requirements.txt
+```
+
+# GRU + SINDy FPGA Accelerator
+
+This repository contains FPGA accelerators and software support for GRU-based and SINDy-based models.  
+You can run the provided overlays on a PYNQ board, run CPU-only C++ demos, or rebuild the FPGA projects from scratch with Vivado/Vitis.
+
+---
+
+## 📂 Repository Layout
+
+| File / Folder | Description |
+|---------------|-------------|
+| `acceleration_kernel.bit`, `acceleration_kernel.hwh`, `acceleration_kernel.tcl` | Bitstream, hardware handoff, and TCL script for the **GRU accelerator** overlay. |
+| `sindy128.bit`, `sindy128.hwh`, `sindy128.tcl` | Bitstream, hardware handoff, and TCL script for the **SINDy** overlay variant. |
+| `customized_GRU_accelerator.cpp` | C++ source to exercise the GRU accelerator (or CPU reference). |
+| `main_tb.cpp` | C++ testbench / driver for CPU-only runs. |
+| `main.h` | Common header file used in C++ sources. |
+| `sindy.cpp` | Standalone SINDy CPU demo. |
+| `kernel.py` | Python driver for PYNQ boards to load bitstreams and call the accelerator. |
+| `gru_training.ipynb` | Jupyter notebook for training/evaluating the GRU model (CPU/GPU, no FPGA required). |
+
+---
+
+## 🚀 Getting Started
+
+### 0) Prerequisites
+
+- **Option A: PYNQ Board**
+  - PYNQ image (Z2 / Ultra96, etc.)
+  - `pynq` package preinstalled
+- **Option B: CPU-only runs**
+  - Linux/macOS with `g++` or `clang++` (C++17)
+- **Option C: FPGA rebuild**
+  - Xilinx Vivado / Vitis installed and licensed
+
+
 
 
