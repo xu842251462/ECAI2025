@@ -96,16 +96,11 @@ source download_datasets.sh
 python3 traffic.py --model ltc --epochs 300 --size 64 --log 5
 ```
 ## Results
-<img width="406" height="143" alt="image" src="https://github.com/user-attachments/assets/bceec543-8b04-45a8-8613-dc99151e359f" />
-
 ## 📈 Analysis of Table 4
-
 From **Table 4**, we observe that across all four benchmark applications, the **MERINDA architecture** successfully recovers the underlying dynamics with **comparable accuracy** to state-of-the-art (SOTA) methods.  
-
 Unlike SOTA baselines that rely on the standard **TensorFlow pipeline** for neural network training on **GPU-based systems**, MERINDA achieves this performance while maintaining its specialized architecture advantages.
 
-
-<img width="833" height="255" alt="image" src="https://github.com/user-attachments/assets/2b42882d-59b4-4dcc-aafc-6b9d9a20abc9" />
+<img width="406" height="143" alt="image" src="https://github.com/user-attachments/assets/bceec543-8b04-45a8-8613-dc99151e359f" />
 
 ## 🔬 In-depth Analysis of Table 3
 
@@ -124,13 +119,18 @@ An in-depth analysis of **Table 3** reveals the following trends:
 ### 📉 Observed Trend
 We observe a **negative correlation between energy consumption and DRAM footprint** across these models.
 
+<img width="833" height="255" alt="image" src="https://github.com/user-attachments/assets/2b42882d-59b4-4dcc-aafc-6b9d9a20abc9" />
 
-<img width="565" height="688" alt="memory_enenrgy_tradeoff_comparision_vertical" src="https://github.com/user-attachments/assets/578d7c74-db3a-4633-abe5-f6d673a3c88b" />
+
+## 📊 Efficiency Analysis (Table 5)
 
 As shown in **Table 5**, the FPGA implementation achieves substantial efficiency gains compared to the GPU baseline:  
+
 - For the **MR task**, the FPGA offers a **1.67× speedup** in runtime over the GPU (`253.97 s` vs. `423.21 s`), despite operating at significantly lower clock frequencies (`173 MHz` vs. `1410 MHz`).  
 - It achieves an **11× reduction in DRAM footprint** (`214.23 MB` vs. `2355.13 MB` vs. `6118.36 MB` for MR).  
 - Unlike GPUs that rely heavily on external DRAM (e.g., **GDDR6** or **HBM**), FPGAs can store frequently accessed data (e.g., weights, hidden states, intermediates) in **on-chip BRAM or registers**.  
 - The memory optimization strategy uses HLS directives such as:  
+
+<img width="565" height="688" alt="memory_enenrgy_tradeoff_comparision_vertical" src="https://github.com/user-attachments/assets/578d7c74-db3a-4633-abe5-f6d673a3c88b" />
 
 
